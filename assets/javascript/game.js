@@ -133,12 +133,13 @@
                 this.arrAlreadyGuessed.push(this.userGuess);
                 this.guessCounter--;
                 $("#guess-counter").text(this.guessCounter);
-                console.log(" 126. this.guessCounter " + this.guessCounter)
+                console.log(" 126. this.guessCounter " + this.guessCounter);
             }
             
             if (this.isGameWon()) {
-                console.log("142. User has won the game!!!")
-                this.userWins++
+                console.log("142. User has won the game!!!");
+                this.userWins++;
+                $("#user-wins").text(this.userWins);
                 console.log("131 Userwins: " + this.userWins);
                 if (this.getNextPuzzle()) {
                     console.log("133. Getting next puzzle");
