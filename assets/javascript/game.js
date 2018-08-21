@@ -36,6 +36,7 @@ wins
         American Gladiator
         American Ninja warrior
         */
+    // arrPuzzleChoiceDisplay: ["____ ____", "_________", "_____ __ _______" ],
     
     arrCurrentPuzzle: [],
     arrAlreadyGuessed: [],
@@ -61,7 +62,10 @@ wins
      getNextPuzzle: function(){
         /*return Math.floor(Math.random() * len);*/
         if (this.puzzleCounter < (wordGuess.arrPuzzleChoice.length - 1)) {
+            
             this.arrCurrentPuzzle.push(this.arrPuzzleChoice[this.puzzleCounter].split(""));
+            console.log("66. array current Puzzle ", this.arrCurrentPuzzle);
+            console.log("67 arrCurrentPuzzle[0]", wordGuess.arrCurrentPuzzle[0]);
             this.puzzleCounter++
             console.log(this.arrCurrentPuzzle)
             return true;
@@ -91,6 +95,11 @@ wins
                 }
             
         }
+    },
+
+    processGuess: function (){
+
+
     }
 
 
