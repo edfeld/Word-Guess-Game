@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Word Guess Game</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+      <!-- Added link to the jQuery Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -15,12 +16,45 @@
       
     .<div class="jumbotron jumbotron-fluid">
         <div class="container">
-            <h1 class="display-3">Word Guess Game</h1>
-            <p class="lead">Jumbo helper text</p>
+            <h1 class="display-3 text-center">Word Guess Game</h1>
+            <p class="lead text-center">A hangman style game</p>
             <hr class="my-2">
 
         </div>
     </div>
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-2">
+            1 of 3
+            </div>
+            <div class="col-md-auto border border-secondary">
+                <p class="text-center">Press any key to get started!</p>
+                <p class="text-center">Wins</p>
+                <p id="user-wins" class="text-center"></p>
+                <p class="text-center">Current Word</p>
+                <p id="display-word" class="text-center"></p>
+                <p class="text-center">Number of Guesses Remaining</p>
+                <p id="guess-counter" class="text-center"></p>
+                <p class="text-center">Letters Already Guessed</p>
+                <p id="letters-guessed" class="text-center"></p>
+            </div>
+            <div class="col col-lg-2">
+            3 of 3
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+            1 of 3
+            </div>
+            <div class="col-md-auto border border-secondary">
+                
+            
+            </div>
+            <div class="col col-lg-2">
+            3 of 3
+            </div>
+        </div>
+        </div>
     
     <script src="assets/javascript/game.js"></script>
     <!-- Optional JavaScript -->
