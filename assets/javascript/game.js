@@ -56,16 +56,9 @@
         },
 
         getNextPuzzle: function(){
-            /*return Math.floor(Math.random() * len);*/
             if (this.puzzleCounter < (wordGuess.arrPuzzleChoice.length)) {
 
-                // for (i=0;i<this.arrCurrentPuzzle.length;i++){
-                    // var strOne = this.arrPuzzleChoice[this.puzzleCounter];
-                    // var arrTemp = strOne.split("");
-                    this.arrCurrentPuzzle = this.arrPuzzleChoice[this.puzzleCounter].split("");
-                    console.log("71. this.arrCurrentPuzzle "+this.arrCurrentPuzzle)
-                    // this.arrCurrentPuzzle.push(this.arrPuzzleChoice[this.puzzleCounter].split(""));
-                // }
+                this.arrCurrentPuzzle = this.arrPuzzleChoice[this.puzzleCounter].split(""); 
                 console.log("66. array current Puzzle ", this.arrCurrentPuzzle);
                 console.log("67 arrCurrentPuzzle[0]", wordGuess.arrCurrentPuzzle[0]);
                 this.puzzleCounter++
@@ -80,15 +73,18 @@
             }
         },
         
-        isLetterDupSelection: function(chr){
-            if (this.arrAlreadyGuessed.indexOf(chr) > -1){
-                return true;
-            }  else {
-                    return false;
-                }
-        },
+        /* Check to see if this letter has already been chosen*/
+        // isLetterDupSelection: function(chr){
+        //     if (this.arrAlreadyGuessed.indexOf(chr) > -1){
+        //         return true;
+        //     }  else {
+        //             return false;
+        //         }
+        // },
 
-        initPuzzleDisplay: function (){
+        /* Initialize the puzzle for display */
+        initPuzzleDisplay: function () {
+            $("#status-output").text(" ");
             this.arrPuzzleDisplay = [];
             for(var i=0; i<this.arrCurrentPuzzle.length; i++){
                 /* if alpha */
@@ -102,8 +98,10 @@
                     }
                 
             }
+            $("#display-word").text(this.arrPuzzleDisplay.join(""));
         },
-
+        
+        /* Has the game been won */
         isGameWon: function () {
             if (this.arrPuzzleDisplay.indexOf("_") < 0) {
                 return true;
@@ -114,6 +112,7 @@
             
         },
 
+        /* Has the game been won */
         isGameLost() {
             if (this.guessCounter < 1){
                 return true;
@@ -122,6 +121,7 @@
             }
         },
 
+        /* run through the game processes */
         processGuess: function () {
             if (this.arrAlreadyGuessed.indexOf(this.userGuess) > -1) {
                 console.log("Already guessed: "+ this.userGuess);
@@ -131,6 +131,7 @@
                     
                 }
                 this.arrAlreadyGuessed.push(this.userGuess);
+                $("#letters-guessed").text(this.arrAlreadyGuessed.join(" "));
                 this.guessCounter--;
                 $("#guess-counter").text(this.guessCounter);
                 console.log(" 126. this.guessCounter " + this.guessCounter);
@@ -150,13 +151,14 @@
                 }
             } else if (this.isGameLost()) {
                 console.log("150. the game has been lost!!");
-                if (this.getNextPuzzle()) {
-                    console.log("133. Getting next puzzle");
-                    
-                } else {
-                    console.log("149. The Game is over. press any key to start again");
-                    this.isGameStart = false;
-                }
+                    if (this.getNextPuzzle()) {
+                        console.log("133. Getting next puzzle");
+                        
+                    } else {
+                        console.log("149. The Game is over. press any key to start again");
+                        this.isGameStart = false;
+                        $("#status-output").text("This Game is over!, Press any key to play again");
+                    }
 
                 }
 
@@ -167,7 +169,8 @@
                 if(this.arrCurrentPuzzle[i] === this.userGuess) {
                     this.arrPuzzleDisplay[i] = this.userGuess;
                 }
-            }    
+            }   
+            $("#display-word").text(this.arrPuzzleDisplay.join("")); 
                 console.log("133. this.arrPuzzleDisplay: ", this.arrPuzzleDisplay);
 
         }
