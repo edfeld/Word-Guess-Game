@@ -10,26 +10,21 @@
         "isGameStart": false,
         "guessCounter": 13,
         "userWins": 0,
-        "arrPuzzleChoice": [ "MATCH GAME", 
+        "arrPuzzleChoice": [ 
+            "MATCH GAME", 
             "JEOPARDY",
-            "WHEEL OF FORTUNE" ], 
-        /* What's my line
-            To tell the truth
-            Dating game
-            Who's line is it anyway
-            The price is right
-            Gong show
-            Family feud
-            Cash cab
-            Biggest loser
-            Hollywood game night
-            Ten Thousand Dollar pyramid
-            Fear Factor
-            Amazing Race
-            American Gladiator
-            American Ninja warrior
-            */
-
+            "WHEEL OF FORTUNE", 
+            "TO TELL THE TRUTH",
+            "DATING GAME",
+            "THE PRICE IS RIGHT",
+            "GONG SHOW",
+            "FAMILY FEUD",
+            "CASH CAB",
+            "BIGGEST LOSER",
+            "FEAR FACTOR",
+            "AMAZING RACE",
+            "NINJA WARRIOR", 
+        ], 
         
         "arrCurrentPuzzle": [],
         "arrAlreadyGuessed": [],
@@ -46,7 +41,6 @@
             this.userWins = 0;
             $("user-wins").text(this.userWins);
             if (this.getNextPuzzle()) {
-                // this.initPuzzleDisplay();
                 console.log("52. puzzle Display: " + this.arrPuzzleDisplay);
             } else {
                 console.log("53. Failed to init Puzzle display ");
@@ -57,7 +51,6 @@
 
         getNextPuzzle: function(){
             if (this.puzzleCounter < (wordGuess.arrPuzzleChoice.length)) {
-
                 this.arrCurrentPuzzle = this.arrPuzzleChoice[this.puzzleCounter].split(""); 
                 console.log("66. array current Puzzle ", this.arrCurrentPuzzle);
                 console.log("67 arrCurrentPuzzle[0]", wordGuess.arrCurrentPuzzle[0]);
@@ -73,14 +66,6 @@
             }
         },
         
-        /* Check to see if this letter has already been chosen*/
-        // isLetterDupSelection: function(chr){
-        //     if (this.arrAlreadyGuessed.indexOf(chr) > -1){
-        //         return true;
-        //     }  else {
-        //             return false;
-        //         }
-        // },
 
         /* Initialize the puzzle for display */
         initPuzzleDisplay: function () {
@@ -112,7 +97,7 @@
             
         },
 
-        /* Has the game been won */
+        /* Has the game been lost */
         isGameLost() {
             if (this.guessCounter < 1){
                 return true;
@@ -141,6 +126,7 @@
                 console.log("142. User has won the game!!!");
                 this.userWins++;
                 $("#user-wins").text(this.userWins);
+                // alert("Winner!");
                 console.log("131 Userwins: " + this.userWins);
                 if (this.getNextPuzzle()) {
                     console.log("133. Getting next puzzle");
@@ -185,17 +171,16 @@ $(document).ready(function() {
         
         wordGuess.userGuess = String.fromCharCode(event.keyCode).toLowerCase();
         console.log("1.The key pressed is: " + wordGuess.userGuess);
-        
+        /* Test to see if the game has been started */ 
         if (wordGuess.isGameStart) {
-
-            
+            /* Do a regex search to see if an Alpha character has been entered */
             if (wordGuess.userGuess.search(/[a-z]/) > -1) {
                 console.log("2.UserGuess: " + wordGuess.userGuess);
-                
+            /* Otherwise set the value to null */    
             } else {
                 wordGuess.userGuess = null;
             }
-
+            /* if it is a non-null value continue */
             if (wordGuess.userGuess)
             {
                 wordGuess.userGuess = wordGuess.userGuess.toUpperCase();
@@ -203,9 +188,9 @@ $(document).ready(function() {
                 wordGuess.processGuess();
             }
         } else {
+            /* start the game initialization process */
             wordGuess.initGame();
             console.log("arr len: " + wordGuess.arrPuzzleChoice.length);
-            
             
         }
     }

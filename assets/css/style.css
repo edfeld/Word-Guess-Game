@@ -8,7 +8,36 @@
 @import url(https://fonts.googleapis.com/css?family=Monoton);
 
 
-body { background: #000; color: #fff; position: relative;}
+body { 
+    /* background: #000; 
+    color: #fff;  */
+    /* position: relative; */
+    background-image: url("../images/1920x1080-3d_1210-1280x720.jpg");
+    /* background-repeat: repeat; */
+}
+
+.main-container {
+    background-color: #ffffff;/* #FFC488; */
+    margin-top: 50px;
+
+}
+
+.main-container > p {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#display-word {
+    letter-spacing: 5px;
+
+}
+
+#wrapper {
+    background-color: #000000;
+}
+
+.game-text {
+    background: #ffffff;
+}
 
 .chrome {
   position: relative;
@@ -138,6 +167,7 @@ body { background: #000; color: #fff; position: relative;}
 
 .street-machine {
   position: relative;
+  width: 690px;
 }
 
 .street {
@@ -184,8 +214,10 @@ body { background: #000; color: #fff; position: relative;}
 
 .machine {
   position: absolute;
-  left: 50px;
-  top: 350px;
+  /* left: 50px;
+  top: 350px; */
+  left: 314px;
+    top: 257px;
   font-family: 'Mr Dafoe', cursive;
   font-size: 130px;
   transform:rotate(-15deg);
