@@ -84,6 +84,7 @@
                 
             }
             $("#display-word").text(this.arrPuzzleDisplay.join(""));
+            $("#letters-guessed").text("");
         },
         
         /* Has the game been won */
