@@ -55,7 +55,6 @@
                 console.log("66. array current Puzzle ", this.arrCurrentPuzzle);
                 console.log("67 arrCurrentPuzzle[0]", wordGuess.arrCurrentPuzzle[0]);
                 this.puzzleCounter++
-                console.log(this.arrCurrentPuzzle)
                 this.initPuzzleDisplay();
                 this.arrAlreadyGuessed = [];
                 this.guessCounter = 13;
