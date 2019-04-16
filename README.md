@@ -5,7 +5,7 @@ Users are presented with a blank set of characters that represents a name of a T
 
 For example:   `_ _ _ _`   `_ _ _ _ _`
 
-Users guess letters by pressing characters on the keyboard in an effort to guess the words.  A user has a limited number of guess they can use before they lose.
+Users guess letters by pressing characters on the keyboard in an effort to guess the words. As correct letters are guessed they are displayed in the puzzle.  A user has a limited number of guess they can use before they lose.
 
 Wins are accumulated.  
 
