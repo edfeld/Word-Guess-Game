@@ -3,7 +3,7 @@
     // This function is run whenever the user presses a key.
         
     /*
-
+        The WordGuess object
     */
 
     var wordGuess = {
