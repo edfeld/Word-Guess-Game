@@ -5,9 +5,9 @@ Users are presented with a blank set of characters that represents a name of a T
 
 For example:   `_ _ _ _ _` `_ _`  `_ _ _ _ _` represents the game show, 'What's my Line".
 
-Users guess letters by pressing characters on the keyboard in an effort to guess the words. As correct letters are guessed, they are displayed in the puzzle.  A user has a limited number of guess they can use before they lose. Wins are accumulated and displayed.
+Users guess letters by pressing characters on the keyboard in an effort to guess the words. As correct letters are guessed, they are displayed in the puzzle.  A user has a limited number of guess they can use before they lose.
 
-Wins are accumulated.  
+Wins are accumulated and displayed on screen.  
 
 [Here is the link to the game](https://edfeld.github.io/Word-Guess-Game/)
 
