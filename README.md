@@ -9,6 +9,6 @@ Users guess letters by pressing characters on the keyboard in an effort to guess
 
 Wins are accumulated.  
 
-(Here is the link to the game)[https://edfeld.github.io/Word-Guess-Game/]
+[Here is the link to the game](https://edfeld.github.io/Word-Guess-Game/)
 
 Press any key to start.
