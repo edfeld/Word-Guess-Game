@@ -1,5 +1,8 @@
 # Word-Guess-Game
-Ths is a hangman style game that feature dynamically updated HTML and CSS powered by JavaScript code with JQuery.
+
+![WordGuess_705x389](https://user-images.githubusercontent.com/18557337/56514494-45f01e80-64ea-11e9-99ba-78d5518bcf9b.png)
+
+## Ths is a hangman style game that feature dynamically updated HTML and CSS powered by JavaScript code with JQuery
 
 Users are presented with a blank set of characters that represents a name of a TV show.  
 
